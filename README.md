@@ -23,3 +23,9 @@ Using RStudio makes it easier, but:
 
 
 The files saved by the script are stored in the working directory.
+
+# Donation:
+Monero:  
+```
+84f3soncneZbyhrtQ73Va5Z1Q5sgNtkSh6hf1PVbcVhUM2QKicNGg88CL24bjZP8DtQ9XCgPw2BMU2zG8ggWnnRfNcNFqcg
+```
