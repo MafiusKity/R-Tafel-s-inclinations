@@ -138,12 +138,18 @@ repeat{
   plot(data_f2[interval_t,1],data_f2[interval_t,2])
   z<-as.numeric(readline("Potential start of the process: "))
   if(nofp==1){
-    a<-head(which(round(data_f2[,1],1)==round(z,1)),1)}
+    a<-head(which(round(data_f2[,1],1)==round(z,1)),1)
+  }
   if(nofp==2){
     a<-tail(which(round(data_f2[,1],1)==round(z,1)),1) #If the cycle are bad selected, here you will have same problems
   }
   interval_t=a:b
-  plot(log10(data_f2[interval_t,2]),data_f2[interval_t,1],main="Tafel_curve")
+  if(nofp==1){
+    plot(log10(data_f2[interval_t,2]),data_f2[interval_t,1],main="Tafel_curve")
+  }
+  if(nofp==2){
+    plot(log10(abs(data_f2[interval_t,2])),data_f2[interval_t,1],main="Tafel_curve")
+  }
   c<-readline("Is the graphic good?[y/n]")
   if(c=="y"){
     data_f3<-cbind(data_f2[interval_t,1],log10(data_f2[interval_t,2]))
@@ -197,8 +203,8 @@ if(a=="y"){
     e_position<-as.numeric(tail(which(round(Ee,2)==round(data_f3[,1],2)),1))
     abline_interval[[i]]=i_position:e_position
     rl<-lm(data_f3[abline_interval[[i]],1]~data_f3[abline_interval[[i]],2])
-    t.coef[i,2]<-round(rl$coefficients[1],2)
-    t.coef[i,3]<-round(rl$coefficients[2],2)
+    t.coef[i,2]<-round(rl$coefficients[1],4)
+    t.coef[i,3]<-round(rl$coefficients[2],4)
     t.coef[i,4]<-round(summary(rl)$r.square,4)
     t.coef[i,5]<-paste("[",Ei,":",Ee,"]")
     plot(data_f3[,2],data_f3[,1])
@@ -266,4 +272,3 @@ if(save_choice==2||3){
 }
 rm(list=ls())
 q(save="no")
-
