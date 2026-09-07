@@ -27,5 +27,9 @@ The files saved by the script are stored in the working directory.
 # Donation:
 Monero:  
 ```
-
+85xCRVQUB94FeRzNhb2KPfckrWsR5SCQt7W4vuMnUHgPHiSqLBRRfGp53At6J4hNoRcwia7gihGs3MSRSG7hDVsW6yrpYvf
+```
+USDT:
+```
+lq1qqwu9ankg0wncykh833t892wdw2fanas80cw7hx9fjgqrxzapcscne8mkvvph38adx7ezxdr2r28hv2dhgl4nvk8cas94jw68h
 ```
